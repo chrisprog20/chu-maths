@@ -1,3 +1,27 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-    {greeting}
+    <h2>Recursive Sequence</h2>
+    <p>
+        Let a, b &isin; &#8469; and the sequence (a<sub>n</sub>)<sub>n &isin; &#8469;</sub>
+        be recursively defined as follows:<br><br>
+        a<sub>0</sub> &#8788; a, b<sub>1</sub> &#8788; b,
+        a<sub>n</sub> &#8788; &frac12;(a<sub>n-1</sub> &plus; a<sub>n-2</sub>) for n &ge; 2.
+    </p>
+    <p>Show here the members for the following values for a and b (min = 0, max = 1000)</p>
+    <f:form action="index" method="post">
+        <div>
+            <label for="a">a</label>
+            <f:form.textfield type="number" id="a" name="a" required="true" min="0" max="1000" />
+        </div>
+        <div>
+            <label for="b">b</label>
+            <f:form.textfield type="number" id="b" name="b" required="true" min="0" max="1000" />
+        </div>
+        <div>
+            <label for="iterations">How many sequence members?</label>
+            <f:form.textfield type="number" id="iterations" name="iterations" required="true" min="1" max="30" value="10"/>
+        </div>
+        <div>
+            <f:form.submit value="Submit" />
+        </div>
+    </f:form>
 </html>

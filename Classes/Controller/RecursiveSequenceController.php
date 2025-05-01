@@ -13,12 +13,14 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class RecursiveSequenceController extends ActionController
 {
     /**
+     * @param int|null $a first start value
+     * @param int|null $b second start value
+     * @param int|null $iterations number of iterations
+     *
      * @return ResponseInterface
      */
-    public function indexAction(): ResponseInterface
+    public function indexAction(?int $a = null, ?int $b = null, int $iterations = null): ResponseInterface
     {
-        $this->view->assign('greeting', 'Hello World!');
-
         return $this->htmlResponse();
     }
 }
