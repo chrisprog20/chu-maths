@@ -10,7 +10,6 @@ namespace Chu\ChuMaths\Domain\Service;
  */
 class SequenceService
 {
-
     /**
      * getValues.
      *
