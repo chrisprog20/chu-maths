@@ -1,0 +1,23 @@
+{
+  "name": "chu/chu-maths",
+  "description": "Playing around with some mathematical tasks",
+  "type": "typo3-cms-extension",
+  "license": "GPL-2.0-or-later",
+  "authors": [{
+    "name": "Christian Huppert",
+    "email": "chr.huppert@yahoo.de"
+  }],
+  "require": {
+    "typo3/cms-core": "^13.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chu\\ChuMaths\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "chu_maths"
+    }
+  }
+}
