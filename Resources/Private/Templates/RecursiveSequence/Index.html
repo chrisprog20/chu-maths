@@ -12,11 +12,13 @@
     <f:form action="index" method="post">
         <div>
             <label for="a">a</label>
-            <f:form.textfield type="number" id="a" name="a" required="true" min="0" max="1000" value="{a}"/>
+            <f:form.textfield type="number" id="a" name="a" required="true" min="0" max="1000"
+                              value="{f:if(condition:a, then: a, else:20)}"/>
         </div>
         <div>
             <label for="b">b</label>
-            <f:form.textfield type="number" id="b" name="b" required="true" min="0" max="1000" value="{b}"/>
+            <f:form.textfield type="number" id="b" name="b" required="true" min="0" max="1000"
+                              value="{f:if(condition:b, then: b, else:40)}"/>
         </div>
         <div>
             <label for="iterations">How many sequence members?</label>
