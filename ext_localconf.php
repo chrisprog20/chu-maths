@@ -15,6 +15,6 @@ ExtensionUtility::configurePlugin(
         ],
         // non-cacheable actions
         [
-            RecursiveSequenceController::class => '',
+            RecursiveSequenceController::class => 'index',
         ]
 );
