@@ -1,0 +1,54 @@
+.tx-chumaths .hidden {
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.tx-chumaths .pagination-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.tx-chumaths .pagination-container a {
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.tx-chumaths .pagination {
+    display: inline-flex;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.tx-chumaths .pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-right: none;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.tx-chumaths .pagination a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.tx-chumaths .pagination a:last-child {
+    border-right: 1px solid #ddd;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tx-chumaths .pagination a.active {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+}
+
+.tx-chumaths .pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
