@@ -31,6 +31,7 @@ class RecursiveSequenceController extends ActionController
      */
     public function indexAction(?int $a = null, ?int $b = null, int $iterations = null): ResponseInterface
     {
+        $values = [];
         if ($a !== null && $b !== null && $iterations !== null) {
             $values = $this->sequenceService->getValues($a, $b, $iterations);
         }
@@ -39,7 +40,7 @@ class RecursiveSequenceController extends ActionController
                 'a' => $a,
                 'b' => $b,
                 'iterations' => $iterations,
-                'values' => $values ?? []
+                'values' => $values
             ]
         );
 

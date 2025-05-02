@@ -3,12 +3,18 @@ function paginate(items, itemsPerPage, paginationContainer) {
     const totalPages = Math.ceil(items.length / itemsPerPage);
 
     function showItems(page) {
+
+        const itemsContainer = document.querySelector(".paginated-items");
+
+        if (itemsContainer === null) {
+            return;
+        }
+
         const startIndex = (page - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         const pageItems = [...items].slice(startIndex, endIndex);
-        const itemsContainer = document.querySelector(".paginated-items");
 
-        if (itemsContainer.hasChildNodes()) {
+        if (itemsContainer.hasChildNodes() && itemsContainer.children.length > 0) {
             itemsContainer.removeChild(itemsContainer.children[0]);
         }
 
