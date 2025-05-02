@@ -40,12 +40,12 @@ class SequenceService
     /**
      * getValuesByRecursion.
      *
-     * @param $values
-     * @param $round
+     * @param array $values
+     * @param int $round
      *
      * @return array
      */
-    private function getRecursiveValues($values, $round): array
+    private function getRecursiveValues(array $values, int $round): array
     {
         if ($round === 0) {
             return $values;
