@@ -4,7 +4,7 @@ function paginate(items, itemsPerPage, paginationContainer) {
 
     function showItems(page) {
 
-        const itemsContainer = document.querySelector(".paginated-items");
+        const itemsContainer = document.querySelector('.paginated-items');
 
         if (itemsContainer === null) {
             return;
@@ -18,12 +18,12 @@ function paginate(items, itemsPerPage, paginationContainer) {
             itemsContainer.removeChild(itemsContainer.children[0]);
         }
 
-        const table = document.createElement("table");
-        const tr = document.createElement("tr");
-        const indexHeader = document.createElement("th");
-        const indexText = document.createTextNode("index");
-        const valueHeader = document.createElement("th");
-        const valueText = document.createTextNode("value");
+        const table = document.createElement('table');
+        const tr = document.createElement('tr');
+        const indexHeader = document.createElement('th');
+        const indexText = document.createTextNode('index');
+        const valueHeader = document.createElement('th');
+        const valueText = document.createTextNode('value');
 
         indexHeader.appendChild(indexText);
         valueHeader.appendChild(valueText);
@@ -44,22 +44,22 @@ function paginate(items, itemsPerPage, paginationContainer) {
         paginationContainer.innerHTML = "";
 
         for (let i = 1; i <= totalPages; i++) {
-            const link = document.createElement("a");
-            link.href = "#";
+            const link = document.createElement('a');
+            link.href = '#';
             link.innerText = i.toString();
 
             if (i === currentPage) {
-                link.classList.add("active");
+                link.classList.add('active');
             }
 
-            link.addEventListener("click", (event) => {
+            link.addEventListener('click', (event) => {
                 event.preventDefault();
                 currentPage = i;
                 showItems(currentPage);
 
-                const currentActive = pagination.querySelector(".active");
-                currentActive.classList.remove("active");
-                link.classList.add("active");
+                const currentActive = pagination.querySelector('.active');
+                currentActive.classList.remove('active');
+                link.classList.add('active');
             });
 
             pagination.appendChild(link);
@@ -70,5 +70,5 @@ function paginate(items, itemsPerPage, paginationContainer) {
     setupPagination();
 }
 
-let items = document.querySelectorAll(".tx-chumaths table.sequence-values.hidden tr.values");
-paginate(items, 10,  ".tx-chumaths .pagination-container");
+let items = document.querySelectorAll('.tx-chumaths table.sequence-values.hidden tr.values');
+paginate(items, 10,  '.tx-chumaths .pagination-container');
