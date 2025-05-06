@@ -1,6 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 <f:section name="main">
+    <f:asset.script identifier="chu_pagination_"
+        src="EXT:chu_maths/Resources/Public/JavaScript/RecursiveSequence/Ajax.js" />
+
     <h2>Recursive Sequence</h2>
     <p>
         Let a, b &isin; &#8469; and the sequence (a<sub>n</sub>)<sub>n &isin; &#8469;</sub>
@@ -9,48 +12,37 @@
         a<sub>n</sub> &#8788; &frac12;(a<sub>n-1</sub> &plus; a<sub>n-2</sub>) for n &ge; 2.
     </p>
     <p>Show here the members for the following values for a and b (min = 0, max = 1000)</p>
-    <f:form action="index" method="post">
+    <f:form class="js-recursive-sequence-form" data="{ajax-url:'{f:uri.page(pageType:1617455214,absolute:1)}'}">
         <div>
             <label for="a">a</label>
             <f:form.textfield type="number" id="a" name="a" required="true" min="0" max="1000"
-                              value="{f:if(condition:a, then: a, else:20)}"/>
+                value="{f:if(condition:a, then: a, else:20)}"/>
         </div>
         <div>
             <label for="b">b</label>
             <f:form.textfield type="number" id="b" name="b" required="true" min="0" max="1000"
-                              value="{f:if(condition:b, then: b, else:40)}"/>
+                value="{f:if(condition:b, then: b, else:40)}"/>
         </div>
         <div>
             <label for="iterations">How many sequence members?</label>
             <f:form.textfield type="number" id="iterations" name="iterations" required="true" min="1" max="100"
-                              value="{f:if(condition: iterations, then: iterations, else: 100)}"/>
+                value="{f:if(condition: iterations, then: iterations, else: 100)}"/>
         </div>
         <div>
-            <f:form.submit value="Submit"/>
+            <f:form.submit value="Get the values" />
         </div>
     </f:form>
 
-    <f:if condition="{values}">
-        <table class="sequence-values hidden">
-            <tr>
-                <th>index</th>
-                <th>value</th>
-            </tr>
-            <f:for each="{values}" as="value" key="index">
-                <tr class="values">
-                    <td>{index}</td>
-                    <td>{value}</td>
-                </tr>
-            </f:for>
-        </table>
+    <table class="sequence-values hidden">
 
-        <div class="paginated-items">
+    </table>
 
-        </div>
+    <div class="paginated-items">
 
-        <div class="pagination-container">
+    </div>
 
-        </div>
-    </f:if>
+    <div class="pagination-container">
+
+    </div>
 </f:section>
 </html>

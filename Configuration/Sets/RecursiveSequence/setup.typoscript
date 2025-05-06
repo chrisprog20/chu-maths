@@ -1,0 +1,12 @@
+recursive_sequence_ajax = PAGE
+recursive_sequence_ajax {
+  typeNum = 1617455214
+  config {
+    disableAllHeaderCode = 1
+    admPanel = 0
+    debug = 0
+  }
+
+  10 < tt_content.list.20.chumaths_recursivesequenceajax
+}
+
