@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Chu\ChuMaths\Controller\PrimeAgeBirthdaysController;
 use Chu\ChuMaths\Controller\RecursiveSequence\AjaxController;
 use Chu\ChuMaths\Controller\RecursiveSequence\IndexController;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
@@ -19,4 +20,11 @@ ExtensionUtility::configurePlugin(
     'RecursiveSequenceAjax',
     [AjaxController::class => 'calculate'],
     [AjaxController::class => 'calculate']
+);
+
+ExtensionUtility::configurePlugin(
+    'ChuMaths',
+    'PrimeAgeBirthdays',
+    [PrimeAgeBirthdaysController::class => 'index'],
+    [PrimeAgeBirthdaysController::class => 'index'],
 );

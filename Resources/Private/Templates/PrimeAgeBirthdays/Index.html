@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:layout name="Default" />
+    <f:section name="main">
+        <h2>Prime Age Birthdays</h2>
+        <p>
+            After the submission of the form you will get your birthdays on a prime age.<br>
+            A prime age is an age that is only divisible by 1 and itself. 2,11,29 and 43 for example are prime ages.
+        </p>
+        <f:form action="index" method="post">
+            <div>
+                <label for="dateOfBirth">Your Date of Birth</label><br>
+                <f:form.textfield type="date" id="dateOfBirth" name="dateOfBirth" required="true" value="{dateOfBirth}"/>
+            </div>
+            <div>
+                <f:form.submit value="Submit"/>
+            </div>
+        </f:form>
+        <f:if condition="{result}">
+            <table>
+                <tr>
+                    <th style="width:100px;text-align:left">Age</th>
+                    <th>Date</th>
+                </tr>
+                <f:for each="{result}" as="item" key="i">
+                    <tr>
+                        <td>{i}</td>
+                        <td><f:format.date format="d.m.Y">{item}</f:format.date></td>
+                    </tr>
+                </f:for>
+            </table>
+        </f:if>
+    </f:section>
+</html>

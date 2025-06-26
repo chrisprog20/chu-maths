@@ -12,5 +12,11 @@ call_user_func(
             'LLL:EXT:chu_maths/Resources/Private/Language/locallang.xlf:plugin.recursive_sequence',
             'EXT:chu_maths/Resources/Public/Icons/Extension.svg'
         );
+        ExtensionUtility::registerPlugin(
+            'ChuMaths',
+            'PrimeAgeBirthdays',
+            'LLL:EXT:chu_maths/Resources/Private/Language/locallang.xlf:plugin.prime_age_birthday',
+            'EXT:chu_maths/Resources/Public/Icons/Extension.svg'
+        );
     }
 );
