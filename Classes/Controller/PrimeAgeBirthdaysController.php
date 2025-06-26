@@ -32,21 +32,20 @@ class PrimeAgeBirthdaysController extends ActionController
     {
         $result = [];
         if ($dateOfBirth !== null) {
-            $dateObject = clone (new DateTime($dateOfBirth));
+            $dateObject = new DateTime($dateOfBirth);
             $nextPrimeYears =  $this->primeService->getNextPrimeYears($dateObject);
 
             $primeAges = $this->primeService->getPrimesBetween(0, 150);
 
-            debug($dateObject, 'dateObject');
-            debug($dateObject->add(new DateInterval('P2Y')), 'dateObject + 2 years');
             $result = [];
+            $year = (int)$dateObject->format('Y');
+            $month = (int)$dateObject->format('m');
+            $day = (int)$dateObject->format('d');
+
             foreach($primeAges as $primeAge) {
-                debug('P' . $primeAge . 'Y');
-                $result[$primeAge] = $dateObject->add(new DateInterval('P' . $primeAge . 'Y'));
+                $result[$primeAge] = clone ($dateObject->setDate($year + $primeAge, $month, $day));
             }
         }
-
-        debug($result);
 
         $this->view->assignMultiple([
             'dateOfBirth' =>  $dateOfBirth,
